@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F8 Day 71 Docker App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="header">
+        <div>
+          <p class="label">Docker Compose Demo</p>
+          <h1>Items Manager</h1>
+        </div>
+        <div id="healthStatus" class="status">Đang kiểm tra backend...</div>
+      </section>
+
+      <section class="panel">
+        <form id="itemForm" class="form">
+          <input
+            id="itemName"
+            type="text"
+            name="name"
+            placeholder="Nhập tên item"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Thêm item</button>
+        </form>
+        <p id="message" class="message"></p>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Danh sách items</h2>
+          <button id="reloadButton" class="secondary" type="button">Tải lại</button>
+        </div>
+        <ul id="itemsList" class="items"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
