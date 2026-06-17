@@ -1,0 +1,31 @@
+services:
+  app-redis:
+    image: redis:7-alpine
+    container_name: f8-day65-redis
+    ports:
+      - "6379:6379"
+
+  backend:
+    build:
+      context: ./backend
+    container_name: f8-day65-backend
+    depends_on:
+      - app-redis
+    environment:
+      PORT: 3000
+      REDIS_URL: redis://app-redis:6379
+      JWT_SECRET: f8-day65-secret
+      JWT_EXPIRES_IN: 1h
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: f8-day65-frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"

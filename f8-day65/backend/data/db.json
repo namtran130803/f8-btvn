@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Node.js Handbook",
+      "price": 120000,
+      "description": "A compact guide for backend learners"
+    },
+    {
+      "id": 2,
+      "name": "Redis Cache Notes",
+      "price": 90000,
+      "description": "Practical notes about cache hit and cache miss"
+    },
+    {
+      "id": 3,
+      "name": "Docker Deploy Checklist",
+      "price": 150000,
+      "description": "A checklist for frontend deployment with Nginx"
+    }
+  ]
+}
